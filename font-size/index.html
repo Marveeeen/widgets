@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font Size Controller</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="container mx-auto mt-10 p-4">
+      <div class="min-w-full">
+        <div class="flex justify-between items-center">
+          <h1 class="text-3xl">Text Sample</h1>
+          <div>
+            <button
+              id="increaseFont"
+              class="p-2 rounded bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              Increase Font Size
+            </button>
+            <button
+              id="decreaseFont"
+              class="p-2 rounded bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
+            >
+              Decrease Font Size
+            </button>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos
+          debitis excepturi. In optio dolorum pariatur maiores itaque ad sunt
+          quam possimus, architecto odio vel, numquam nemo error ab quisquam!
+        </p>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
