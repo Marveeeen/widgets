@@ -1,0 +1,92 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Carousel container */
+.carousel {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+/* Carousel track → holds all items in a row */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  /* You will move this track with JS */
+  position: relative;
+}
+
+/* Each item inside the carousel */
+.carousel-item {
+  flex: 0 0 100%; /* Full width, but you can adjust to partial if you want multi-item view */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* Image styling */
+.carousel-item img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Center item effect → you will add/remove this class via JS */
+.carousel-item.center img {
+  transform: scale(1.2);
+  opacity: 1;
+  z-index: 3;
+}
+
+/* Left/right items effect → you will add/remove these via JS */
+.carousel-item.prev img{
+  transform: scale(0.8);
+  opacity: 0.7;
+  z-index: 2;
+  transform: translateX(-450px);
+}
+
+.carousel-item.next img{
+  transform: scale(0.8);
+  opacity: 0.7;
+  z-index: 2;
+  transform: translateX(450px);
+}
+
+
+/* Optional carousel buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Carousel Component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Carousel Component -->
+    <div class="carousel">
+      <!-- Carousel track that wil1 be moved by JS -->
+      <div class="carousel-track">
+        <div class="carousel-item center">
+          <img src="./images/image.png" alt="Image 1" />
+        </div>
+        <div class="carousel-item prev">
+          <img src="./images/image1.png" alt="Image 2" />
+        </div>
+        <div class="carousel-item next">
+          <img src="images/image2.png" alt="Image 3" />
+        </div>
+        <!-- Add more .carousel-item as needed dynamically -->
+      </div>
+
+      <!-- Prev/Next buttons (optional, for JS hooks) -->
+      <button class="carousel-button prev">❮</button>
+      <button class="carousel-button next">❯</button>
+    </div>
+  </body>
+</html>
