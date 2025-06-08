@@ -1,0 +1,170 @@
+/* === Simple CSS Reset === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* === Overall Container === */
+.container {
+  padding: 1rem;
+  min-height: 100vh;
+  margin: auto;
+  max-width: 100%;
+}
+
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Skeleton Loader */
+.skeleton-item, .list-item {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.skeleton-line {
+    height: 1rem;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    animation: loading 1.5s infinite;
+    background-size: 200% 100%;
+    border-radius: .25rem;
+}
+
+.skeleton-line.name {
+    margin-bottom: .25rem;
+    width: 60%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* User List */
+
+.loaded {
+    display: none;
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.badge {
+    background-color: blue;
+    color: white;
+    padding: .25rem 1rem;
+    border-radius: .25rem;
+}
+
+.list-item .name {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.list-item .email {
+    color: grey;
+}
+
+/* ERROR */
+
+.error {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    text-align: center;
+    background-color: red;
+}
+
+.error span {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
