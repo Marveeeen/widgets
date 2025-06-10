@@ -1,0 +1,161 @@
+/* === Simple CSS Reset === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* === Overall Container === */
+.container {
+  padding: 1rem;
+  min-height: 100vh;
+  margin: auto;
+  max-width: 100%;
+}
+
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-steps .step {
+  border: 3px solid #e0e0e0;
+  border-radius: 50%;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.step.active {
+  border-color:  #007bff;
+
+}
+
+.progress-line {
+  margin-top: -30px;
+  height: 3px;
+  background-color: #e0e0e0;
+  position: relative;
+}
+
+.progress {
+  position: absolute;
+  height: 100%;
+  background-color: #007bff;
+  transition: 0.3s;
+}
+
+.progress-controller {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.progress-controller button {
+  background-color: #e0e0e0;
+  padding: .75rem 1.75rem;
+  border-radius: 0.25rem;
+  font-size: 1.15rem;
+  color: black;
+  cursor: pointer;
+}
+
+.progress-controller button.next {
+  background-color: #007bff;
+  color: white;
+}
