@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coupon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-item">
+          <span>Subtotal:</span>
+          <span id="subtotal"></span>
+        </div>
+        <div class="summary-item">
+          <span>Shipping:</span>
+          <span id="shipping"></span>
+        </div>
+        <div class="coupon-section">
+          <div class="coupon-field">
+            <input
+              id="coupon-text"
+              type="text"
+              placeholder="Enter coupon code"
+            />
+            <button id="apply">Apply</button>
+          </div>
+          <div id="coupon-message" class="hide"></div>
+        </div>
+        <div class="summary-item discount hide">
+          <span>Discount:</span>
+          <span id="discount"></span>
+        </div>
+        <div class="summary-item total-section">
+          <h3>Total:</h3>
+          <span id="total"></span>
+        </div>
+        <button class="checkout">Proceed to Checkout</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
