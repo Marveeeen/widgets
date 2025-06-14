@@ -1,0 +1,262 @@
+/* === Simple CSS Reset === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* === Overall Container === */
+.container {
+  padding: 1rem;
+  min-height: 100vh;
+  margin: auto;
+  max-width: 100%;
+}
+
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+header button {
+  background-color: lightseagreen;
+  color: white;
+}
+
+header h2 {
+  font-size: 2.5rem;
+}
+
+header p {
+  color: grey;
+}
+
+header button:hover {
+  color: lightseagreen;
+  background-color: white;
+}
+
+/* PRODUCT CARD */
+
+.product-lists, .skeleton-loader {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.product-item {
+  height: 100%;
+  padding: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image-container > img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-body h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.product-price-ratings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.product-price-ratings .product-price {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.product-price-ratings .product-ratings {
+  display: flex;
+  align-items: center;
+}
+
+.product-price-ratings .product-ratings .product-stars {
+  color: #ffc107;
+  margin-right: 5px;
+}
+
+button {
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: .5rem .75rem;
+  color: lightseagreen;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightseagreen;
+  color: white;
+}
+
+
+/* Skeleton Loader */
+.skeleton-item {
+    padding: 1.2rem;
+}
+
+.skeleton-line {
+    height: 1rem;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    animation: loading 1.5s infinite;
+    background-size: 200% 100%;
+    border-radius: .25rem;
+}
+
+.skeleton-line.title {
+    margin-bottom: .25rem;
+    width: 60%;
+}
+
+span.skeleton-line.price {
+  width: 40%;
+}
+
+.product-ratings.skeleton {
+  width: 50%;
+}
+
+span.skeleton-line.stars{
+  width: 50%;
+  margin-right: 20px;
+}
+
+span.skeleton-line.count {
+  width: 40%;
+}
+
+.loaded {
+  display: none
+}
+
+/* ERROR */
+
+.error {
+    text-align: center;
+    padding: 1rem;
+}
+
+.error span {
+    color: red;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
