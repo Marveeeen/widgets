@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autofill Search Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <h2>Shipping Address</h2>
+        <form action="">
+          <div class="form-field">
+            <label for="search-address">Search Address</label>
+            <div class="search-container">
+              <input
+                type="text"
+                id="search-address"
+                placeholder="Type your address"
+              />
+              <button id="search" type="button">Search</button>
+            </div>
+            <div class="address-suggestion"></div>
+          </div>
+          <div class="form-field">
+            <label for="street-address">Street Address</label>
+            <input type="text" id="street-address" />
+          </div>
+          <div class="form-field">
+            <label for="city">City</label>
+            <input type="text" id="city" />
+          </div>
+          <div class="form-field">
+            <label for="state">State</label>
+            <input type="text" id="state" />
+          </div>
+          <div class="form-field">
+            <label for="zip-code">Zip Code</label>
+            <input type="text" id="zip-code" />
+          </div>
+          <button id="submit" type="button">Submit Address</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
