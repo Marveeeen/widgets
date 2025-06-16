@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Autofill Search Form</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -18,10 +22,15 @@
                 type="text"
                 id="search-address"
                 placeholder="Type your address"
+                role="combobox"
+                aria-autocomplete="off"
+                aria-controls="suggestion-list"
               />
-              <button id="search" type="button">Search</button>
+              <button id="search" type="button">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
-            <div class="address-suggestion"></div>
+            <ul id="suggestion-list" class="address-suggestion"></ul>
           </div>
           <div class="form-field">
             <label for="street-address">Street Address</label>

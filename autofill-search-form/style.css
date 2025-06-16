@@ -119,7 +119,8 @@ form {
 
 .form-field input {
   border: 1px solid grey;
-  border-radius: 5px;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
   padding: .5rem;
 }
 
@@ -128,16 +129,15 @@ form {
 }
 
 .search-container button {
-  background-color: blue;
-  color: white;
-  padding: .5rem 1rem;
-  border-radius: 5px;
+  z-index: 1;
+  border: 1px solid grey;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  padding: .5rem;
 }
 
-.search-container button:hover {
-  background-color: transparent;
-  color: black;
-  border: 1px solid black;
+i.fa-search:hover {
+  transform: scale(.8);
 }
 
 .search-container input {
@@ -175,4 +175,10 @@ form {
   color:  white;
   padding: .7rem .5rem;
   border-radius: 5px;
+}
+
+
+li:focus {
+  background-color: #007BFF;
+  color: white;
 }

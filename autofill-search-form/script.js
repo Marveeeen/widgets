@@ -6,11 +6,48 @@ document.addEventListener("DOMContentLoaded", function () {
   const state = document.getElementById("state");
   const zipCode = document.getElementById("zip-code");
 
+  searchAddressInput.addEventListener("input", searchAddress);
+
+  let suggestions = [];
+  let activeIndex = -1;
+
   searchAddressInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      searchAddress();
+    const maxIndex = suggestions.length - 1;
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (maxIndex === -1) return;
+      activeIndex = activeIndex + 1 > maxIndex ? 0 : activeIndex + 1;
+      suggestions[activeIndex]?.focus();
     }
   });
+
+  suggestionAddress.addEventListener("keydown", function (e) {
+    const maxIndex = suggestions.length - 1;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (maxIndex === -1) return;
+      activeIndex = activeIndex + 1 > maxIndex ? 0 : activeIndex + 1;
+      suggestions[activeIndex]?.focus();
+    }
+
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (maxIndex === -1) return;
+      activeIndex = activeIndex - 1 < 0 ? maxIndex : activeIndex - 1;
+      suggestions[activeIndex]?.focus();
+    }
+
+    if (e.key === "Enter") {
+      const currentId = suggestions[activeIndex]?.id;
+      autoFilled(currentId);
+
+      // reset
+      activeIndex = -1;
+      suggestionAddress.innerHTML = "";
+    }
+  });
+
   // create a mock address to imitate DB data
   const mockAddress = [
     {
@@ -54,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const query = searchAddressInput.value.toLowerCase();
 
     suggestionAddress.innerHTML = "";
+    suggestions = [];
 
     if (query === "") return;
 
@@ -65,22 +103,23 @@ document.addEventListener("DOMContentLoaded", function () {
         address.zipCode.includes(query)
     );
 
-    filteredAddress.forEach((address) => {
-      const suggestionItem = document.createElement("div");
+    filteredAddress.forEach((address, index) => {
+      const suggestionItem = document.createElement("li");
       suggestionItem.className = "suggestion-item";
+      suggestionItem.setAttribute("role", "option");
+      suggestionItem.setAttribute("id", address.id);
+      suggestionItem.setAttribute("tabIndex", "-1");
+
       suggestionItem.textContent = `${address.street}, ${address.city}, ${address.state} ${address.zipCode}`;
 
-      suggestionAddress.addEventListener("click", function () {
-        autoFilled(address.id);
-        suggestionAddress.innerHTML = "";
-      });
+      suggestions.push(suggestionItem);
       suggestionAddress.appendChild(suggestionItem);
     });
   }
 
   function autoFilled(id) {
     const clickItemIndex = mockAddress.findIndex(
-      (address) => address.id === id
+      (address) => address.id === parseInt(id)
     );
 
     const clickAddress = mockAddress[clickItemIndex];
