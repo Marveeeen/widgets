@@ -1,10 +1,10 @@
-# Daily Widget Practice — HTML, CSS & JavaScript
+# Daily Widget Practice (HTML, CSS & JavaScript)
 
-Welcome to my **Widgets Repo** — a personal daily practice project where I build small UI components and interactive features using only **HTML**, **CSS**, and **vanilla JavaScript**.
+Welcome to my **Widgets Repo**, a personal daily practice project where I build small UI components and interactive features using only **HTML**, **CSS**, and **vanilla JavaScript**.
 
 ## Why This Project Exists
 
-In a world full of frameworks and libraries, I believe mastering the fundamentals is key to building truly solid and accessible web applications. This repo is my commitment to doing just that — refining the basics by **building a new widget every day**, completely from scratch.
+In a world full of frameworks and libraries, I believe mastering the fundamentals is key to building truly solid and accessible web applications. This repo is my commitment to doing just that refining the basics by **building a new widget every day**, completely from scratch.
 
 Each widget is designed to:
 
